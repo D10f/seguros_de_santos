@@ -110,9 +110,9 @@
   &__minimize,
   &__close {
     position: absolute;
-    font-size: 2rem;
-    top: 2rem;
-    right: 2rem;
+    font-size: 3rem;
+    top: 1rem;
+    right: 3rem;
 
     &:hover {
       cursor: pointer;
@@ -121,7 +121,7 @@
   }
 
   &__minimize {
-    top: 1.5rem;
-    right: 5rem;
+    top: .8rem;
+    right: 6rem;
   }
 }

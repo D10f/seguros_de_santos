@@ -1,4 +1,5 @@
 @use '../abstract/mixins';
+@use '../abstract/variables';
 
 .paragraph {
   margin-bottom: 2rem;
@@ -23,7 +24,13 @@
 .section__title {
   margin: 5rem 0;
   font-size: 3rem;
-  color: #333;
+  color: variables.$color-dark;
   display: inline-block;
-  border-bottom: 2px solid #8bbe29;
+  border-bottom: 2px solid variables.$color-primary;
+}
+
+.section__subtitle {
+  margin: -5rem 0 3rem 0;
+  font-size: 2.5rem;
+  color: variables.$color-dark;
 }

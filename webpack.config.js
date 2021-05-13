@@ -2,14 +2,17 @@ const path = require('path');
 const fs = require('fs');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
 let devtool = 'source-map';
 let plugins = [
-  new HtmlWebpackPlugin({ filename: 'index.html', template: './src/index.html' })
+  new HTMLWebpackPlugin({ filename: 'index.html', template: './src/index.html' }),
+  new HTMLWebpackPlugin({ filename: 'aviso-legal.html', template: './src/aviso-legal.html' }),
+  new HTMLWebpackPlugin({ filename: 'privacidad.html', template: './src/privacidad.html' }),
+  new HTMLWebpackPlugin({ filename: 'proteccion-datos.html', template: './src/proteccion-datos.html' })
 ];
 
 if (process.env.NODE_ENV === 'production') {

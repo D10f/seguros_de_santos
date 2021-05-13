@@ -8,6 +8,14 @@
     max-width: 120rem;
   }
 
+  &--narrow {
+    max-width: 60vw;
+
+    @include mixins.responsive(tablet) {
+      max-width: 80vw;
+    }
+  }
+
   &__column {
     display: flex;
     flex-direction: column;

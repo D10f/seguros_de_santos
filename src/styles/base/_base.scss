@@ -22,6 +22,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.6;
+  background-color: variables.$color-light;
   color: variables.$color-dark;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -42,4 +43,9 @@ a {
 
 li {
   list-style: none;
+}
+
+ol li {
+  list-style: decimal;
+  margin-bottom: 1rem;
 }

@@ -1,19 +1,37 @@
 @use '../abstract/variables';
+@use '../abstract/mixins';
 
+.mt0 {
+  margin-top: 0 !important;
+}
 .mt2 {
-  margin-top: 2rem;
+  margin-top: 2rem !important;
 }
 .mt5 {
-  margin-top: 5rem;
+  margin-top: 5rem !important;
 }
 .mt10 {
-  margin-top: 10rem;
+  margin-top: 10rem !important;
 }
-.mb2{
-  margin-bottom: 2rem;
+.mb2 {
+  margin-bottom: 2rem !important;
+}
+.mb10 {
+  margin-bottom: 10rem !important;
+}
+.pt15 {
+  padding-top: 15rem !important;
+}
+.pt20 {
+  padding-top: 20rem !important;
+}
+.pt20-mobile {
+  @include mixins.responsive(tablet) {
+    padding-top: 20rem !important;
+  }
 }
 .font-regular {
-  font-size: 1.6rem;
+  font-size: 1.6rem !important;
 }
 .is-centered {
   position: relative;

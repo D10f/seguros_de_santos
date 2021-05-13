@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seguros C. de Santos</title>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/">
+      <img class="navbar__logo" src="../assets/santos.png" alt="Seguros C de Santos">
+    </a>
+    <ul class="navbar__links">
+      <li class="navbar__item">
+        <a class="navbar__link" href="#products">Seguros</a>
+      </li>
+      <li class="navbar__item">
+        <a class="navbar__link" href="#about">Quienes Somos</a>
+      </li>
+      <li class="navbar__item">
+        <a class="navbar__link toggler" href="#contact">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="mb10 pt15 pt20-mobile">
+    <div class="container container--narrow">
+      <h1 class="section__title">Política de Privacidad</h1>
+      <h2 class="section__subtitle">Información Básica de Protección de Datos para el Cliente</h2>
+
+      <p class="paragraph">RESPONSABLE DEL TRATAMIENTO: SEGUROS C. DE SANTOS RG. DGS F/2188 le informa de que sus datos personales, así como aquellos otros datos de posibles terceros –por ejemplo, sus empleados- que facilite como datos de contacto con su empresa, serán incorporados a un fichero titularidad de dicha sociedad, con domicilio social en Calle Duquesa de Medinaceli, 1 Local 9 - 28803 - Alcalá de Henares (Madrid), número de teléfono 91 882 49 21  y correo electrónico: sanseguros@hotmail.com</p>
+      <p class="paragraph">FINALIDAD DEL TRATAMIENTO: Las finalidades de dicho tratamiento serán</p>
+
+      <ol>
+        <li>FINALIDADES DE NATURALEZA CONTRACTUAL: facilitar la gestión de la prestación de los servicios pactados, mantener la relación comercial, así como cualquier otro servicio que se contrate con posterioridad.</li>
+        <li>FINALIDADES BASADAS EN EL CONSENTIMIENTO DEL INTERESADO: Con fines de mercadotecnia, para el ofrecimiento de productos o servicios propios relacionados con el sector de la construcción, iluminación y decoración de escenarios y áreas para eventos audiovisuales, e iluminación y señalización de emergencia dentro del ámbito empresarial y privado, y envío de comunicaciones relacionadas con nuestra actividad.</li>
+      </ol>
+
+      <p class="paragraph">LEGITIMACIÓN: Consentimiento expreso del interesado expreso.</p>
+      <p class="paragraph">DESTINATARIOS: Los destinatarios de los datos vienen indicados en el link abajo indicado. No existen transferencias internacionales de datos.</p>
+      <p class="paragraph">DERECHOS DE LOS INTERESADOS: Usted podrá ejercer sus derechos de acceso, rectificación, supresión, oposición, portabilidad y limitación del tratamiento, dirigiéndose a sanseguros@hotmail.com o al domicilio arriba indicado.</p>
+      <p class="paragraph">INFORMACIÓN ADICIONAL: Puede acceder a información adicional requerida por la normativa aplicable, y en especial, a información sobre el tratamiento de los datos, y los destinatarios de los datos, a través de del siguiente <a class="is-primary" href="#">link</a>.</p>
+      <p class="paragraph">En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (en adelante LSSI), con la aceptación de la presente política de privacidad Ud. consiente expresamente en que los envíos se realicen a través de medios electrónicos. Puede darse de baja enviando un e-mail a la dirección de e-mail arriba indicada.</p>
+    </div>
+  </main>
+
+  <footer class="footer mt0">
+    <div class="container container__grid-3">
+      <div class="container__column">
+        <h3 class="mb2">Corredor De Seguros</h3>
+        <img class="footer__logo" src="../assets/santos.png" alt="Seguros C de Santos">
+        <p>&copy; 2021 Seguros C. de Santos.</p>
+      </div>
+
+      <div class="container__column">
+        <h3 class="mb2" id="contact">Contacto</h3>
+        <p>C/ Duquesa de Medinaceli, 1 Local 9</p>
+        <p class="mb2">28803 - Alcalá de Henares</p>
+        <p>Tel: 91 882 49 21</p>
+        <p class="mb2">Móvil: 610 570 885 </p>
+        <p>sanseguros@hotmail.com</p>
+      </div>
+
+      <div class="container__column">
+        <h3 class="mb2">Miembro De</h3>
+        <a href="https://www.aunnaasociacion.es/es">
+          <img class="footer__partner-logo" src="../assets/aunna-256.png" alt="Aunna">
+        </a>
+        <a class="mt2" href="https://6c3ade4a-44ef-47c6-92b7-c7945120a7ed.filesusr.com/ugd/e98b9b_f1a900adf54349b3bf08f70a9dbd32dd.pdf">Informe Anual DAC Aunna</a>
+      </div>
+    </div>
+
+    <ul class="footer__legal mt10">
+      <li><a href="#">Aviso Legal</a></li>
+      <li><a href="#">Politica de Privacidad</a></li>
+      <li><a href="#">Protección de Datos</a></li>
+    </ul>
+  </footer>
+
+  <form class="contact contact--closed" action="index.html" method="post">
+    <h3>Formulario de Contacto</h3>
+    <input class="contact__input" type="text" name="name" placeholder="Nombre">
+    <input class="contact__input" type="email" name="email" placeholder="Correo Electronico">
+    <input class="contact__input" type="tel" name="phone" placeholder="Teléfono">
+    <input class="contact__input" type="text" name="subject" placeholder="Asunto">
+    <textarea class="contact__text" name="message" placeholder="Como Podemos Ayudar?" rows="5"></textarea>
+    <div class="contact__group mt2">
+      <button class="cta font-regular" type="submit">Enviar</button>
+      <input class="contact__cookies" type="checkbox" name="cookies">
+      <input class="contact__checkbox" type="checkbox" name="consent" id="consent">
+      <label class="contact__label" for="consent">
+        <span>He leído y acepto la <a class="is-primary" href="#">política de privacidad</a>.</span>
+      </label>
+    </div>
+    <span class="contact__minimize">_</span>
+    <span class="contact__close">&times;</span>
+  </form>
+
+</body>
+</html>
