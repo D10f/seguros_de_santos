@@ -18,19 +18,13 @@ html {
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.6;
   color: variables.$color-dark;
-  // background-image: variables.$background-gradient;
   box-sizing: border-box;
   overflow-x: hidden;
-
-  // @media (prefers-color-scheme: dark) {
-  //   color: variables.$color-light;
-  //   background-image: variables.$background-gradient-dark;
-  // }
 }
 
 h6, h5, h4, h3, h2, h1, a, p, li {

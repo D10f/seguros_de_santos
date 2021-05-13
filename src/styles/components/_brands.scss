@@ -1,4 +1,5 @@
 @use '../abstract/mixins';
+@use '../abstract/variables';
 
 .brands {
   display: grid;
@@ -11,5 +12,14 @@
   }
   @include mixins.responsive(phone) {
     grid-template-columns: 1fr;
+  }
+
+  li {
+    font-size: 2rem;
+
+    &:hover {
+      cursor: default;
+      color: variables.$color-primary;
+    }
   }
 }

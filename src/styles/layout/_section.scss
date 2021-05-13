@@ -29,9 +29,21 @@
     z-index: 70;
     padding-top: 10rem;
     padding-bottom: 10rem;
+
     background-image:
       linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
-      url(../assets/workspace.jpg);
+      url(../assets/workspace.webp);
+
+    @include mixins.responsive(tablet) {
+      background-image:
+        linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+        url(../assets/workspace-800.webp);
+    }
+    @include mixins.responsive(phone) {
+      background-image:
+        linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+        url(../assets/workspace-400.webp);
+    }
 
     & > * {
       transform: skewY(2deg);
@@ -45,8 +57,19 @@
     transform: translateY(-16rem) skewY(3deg);
     z-index: 60;
     background-image:
-    linear-gradient(to top, rgba(variables.$color-light, 0.9), transparent),
-    url(../assets/mountain-man.jpg);
+      linear-gradient(to top, rgba(variables.$color-light, 0.9), transparent),
+      url(../assets/mountain-man.webp);
+
+    @include mixins.responsive(tablet) {
+      background-image:
+        linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+        url(../assets/mountain-man-800.webp);
+    }
+    @include mixins.responsive(phone) {
+      background-image:
+        linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+        url(../assets/mountain-man-400.webp);
+    }
 
     & > * {
       transform: skewY(-3deg);
@@ -62,7 +85,18 @@
     z-index: 50;
     background-image:
       linear-gradient(to right, rgba(variables.$color-gray-light, 0.9), transparent),
-      url(../assets/buildings.jpg);
+      url(../assets/buildings.webp);
+
+    @include mixins.responsive(tablet) {
+      background-image:
+        linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+        url(../assets/buildings-800.webp);
+    }
+    @include mixins.responsive(phone) {
+      background-image:
+        linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+        url(../assets/buildings-400.webp);
+    }
 
     & > * {
       transform: skewY(2deg);
@@ -79,8 +113,24 @@
     background-image:
       linear-gradient(to bottom right,
         rgba(variables.$color-light, 0.7),
-        rgba(variables.$color-gray-dark, 0.9)),
-      url(../assets/happy-customers.jpg);
+        rgba(variables.$color-gray-dark, 0.75)),
+      url(../assets/happy-customers.webp);
+
+    @include mixins.responsive(tablet) {
+      background-image:
+        linear-gradient(to bottom right,
+          rgba(variables.$color-light, 0.7),
+          rgba(variables.$color-gray-dark, 0.75)),
+        url(../assets/happy-customers-800.webp);
+    }
+
+    @include mixins.responsive(phone) {
+      background-image:
+        linear-gradient(to bottom right,
+          rgba(variables.$color-light, 0.7),
+          rgba(variables.$color-gray-dark, 0.75)),
+        url(../assets/happy-customers-400.webp);
+    }
 
     & > * {
       transform: skewY(-1deg);

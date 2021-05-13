@@ -1,4 +1,5 @@
 @use '../abstract/variables';
+@use '../abstract/mixins';
 
 .landing {
   display: flex;
@@ -7,16 +8,26 @@
   height: 100vh;
   transform: translateY(-5rem) skewY(2deg);
   padding-top: 5rem;
-
-  background-size: cover;
-  background-image:
-    linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
-    url(../assets/business-man-1280.jpeg);
-
   box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
   position: relative;
   overflow: hidden;
   z-index: 80;
+
+  background-size: cover;
+  background-image:
+    linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+    url(../assets/business-man-1200.webp);
+
+  @include mixins.responsive(tablet) {
+    background-image:
+      linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+      url(../assets/business-man-800.webp);
+  }
+  @include mixins.responsive(phone) {
+    background-image:
+      linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
+      url(../assets/business-man-400.webp);
+  }
 
   & > * {
     transform: skewY(-2deg);
