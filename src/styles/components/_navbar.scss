@@ -1,0 +1,57 @@
+@use '../abstract/variables';
+@use '../abstract/mixins';
+
+.navbar {
+  position: absolute;
+  // top: 0;
+  height: 12.8rem;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10vw;
+  z-index: 90;
+
+  @include mixins.responsive(tablet) {
+    justify-content: center;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 1rem;
+    left: 10vw;
+    height: 12.8rem;
+
+    @include mixins.responsive(tablet) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid variables.$color-primary;
+
+    @include mixins.responsive(tablet) {
+      border-top: 2px solid variables.$color-primary;
+      border-bottom: none;
+      transform: translateY(12rem);
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: 2rem;
+    align-self: stretch;
+
+    @include mixins.responsive(phone) {
+      padding: 1rem 0 0 0;
+    }
+  }
+
+  &__link {
+    margin: 0 1rem;
+  }
+}

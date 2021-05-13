@@ -1,0 +1,24 @@
+@use '../abstract/variables';
+
+.review {
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$color-white;
+  box-shadow: variables.$box-shadow;
+  padding: 4rem;
+  margin: 0 1rem;
+  border-radius: variables.$border-radius;
+
+  &__title {
+    margin-bottom: 1rem;
+    text-align: center;
+
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    color: variables.$color-gray-dark;
+  }
+}

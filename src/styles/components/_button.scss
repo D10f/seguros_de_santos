@@ -1,0 +1,25 @@
+%button {
+  background: #f4f4f4;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+%button-outlined {
+  @extend %button;
+  background: none;
+  color: #f4f4f4;
+  border: 2px solid #f4f4f4;
+
+  &:hover {
+    background: #f4f4f4;
+    color: black;
+  }
+}
+
+%button-large {
+  padding: 1.5rem 2rem;
+}

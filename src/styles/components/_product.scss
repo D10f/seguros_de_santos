@@ -1,0 +1,20 @@
+@use '../abstract/variables';
+
+.product {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  &__description {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}

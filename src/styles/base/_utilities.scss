@@ -1,0 +1,34 @@
+@use '../abstract/variables';
+
+.mt2 {
+  margin-top: 2rem;
+}
+.mt5 {
+  margin-top: 5rem;
+}
+.mt10 {
+  margin-top: 10rem;
+}
+.mb2{
+  margin-bottom: 2rem;
+}
+.font-regular {
+  font-size: 1.6rem;
+}
+.is-centered {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.is-primary {
+  color: variables.$color-primary;
+}
+.has-text-centered {
+  margin: 0 auto;
+}
+.flex-start {
+  align-self: flex-start;
+}
+.flex-end {
+  align-self: flex-end;
+}

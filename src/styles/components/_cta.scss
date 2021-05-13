@@ -1,0 +1,33 @@
+@use '../abstract/variables';
+
+.cta {
+  background-color: variables.$color-primary;
+  color: variables.$color-white;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid variables.$color-primary;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+
+  &--outlined {
+    background-color: transparent;
+    border: 2px solid variables.$color-primary-light;
+    color: variables.$color-primary;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: variables.$color-white;
+      border-bottom: 2px solid variables.$color-primary-dark;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    cursor: pointer;
+    background-color: variables.$color-primary-light;
+    // color: variables.$color-gray-light;
+    border-bottom: 2px solid variables.$color-primary-dark;
+  }
+}

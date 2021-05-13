@@ -1,0 +1,28 @@
+@use '../abstract/mixins';
+
+.paragraph {
+  margin-bottom: 2rem;
+  line-height: 2.75rem;
+
+  &--columns {
+    columns: 3;
+    column-gap: 3rem;
+
+    @include mixins.responsive(tablet) {
+      columns: 2;
+    }
+
+    @include mixins.responsive(phone) {
+      columns: 1;
+      line-height: 3.25rem;
+    }
+  }
+}
+
+.section__title {
+  margin: 5rem 0;
+  font-size: 3rem;
+  color: #333;
+  display: inline-block;
+  border-bottom: 2px solid #8bbe29;
+}

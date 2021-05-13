@@ -1,0 +1,15 @@
+@use '../abstract/mixins';
+
+.brands {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+
+  @include mixins.responsive(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include mixins.responsive(phone) {
+    grid-template-columns: 1fr;
+  }
+}

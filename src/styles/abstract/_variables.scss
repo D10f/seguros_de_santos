@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+$color-primary: #8bbe29;
+$color-primary-light: color.adjust($color-primary, $lightness: 10%);
+$color-primary-dark: color.adjust($color-primary, $blackness: 10%);
+
+$gradient-primary: linear-gradient(
+  to right bottom,
+  $color-primary-light,
+  $color-primary 25%,
+);
+
+$color-white: #fff;
+$color-light: #f4f4f4;
+$color-gray-light: #eee;
+$color-gray-dark: #777;
+$color-dark: #333;
+$color-black: #000;
+
+$box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+$border-radius: 3px;
