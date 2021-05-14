@@ -58,12 +58,12 @@
       height: 2rem;
       margin: 0 1rem;
       border: 2px solid variables.$color-primary;
+    }
 
-      &:hover,
-      &:target,
-      &:active {
-        cursor: pointer;
-      }
+    &:hover,
+    &:target,
+    &:active {
+      cursor: pointer;
     }
 
     @include mixins.responsive(phone) {
@@ -74,7 +74,10 @@
   &__checkbox {
     display: none;
 
-    &:checked + .contact__label::before {
+    &:target ~ .contact__label::before,
+    &:focus ~ .contact__label::before,
+    &:active ~ .contact__label::before,
+    &:checked ~ .contact__label::before {
       background-color: variables.$color-primary-light;
     }
   }
@@ -86,14 +89,22 @@
   }
 
   &__input {
+    font-family: inherit;
     padding: 1rem;
     margin: 0.5rem 0;
-  }
+    color: variables.$color-dark;
+    border: 1px solid variables.$color-gray-dark;
+    border-radius: variables.$border-radius;
 
-  &__text {
-    padding: 1rem;
-    margin-top: 0.5rem;
-    font-size: 1.5rem;
+    &:focus {
+      border-color: variables.$color-dark;
+      box-shadow: none;
+      outline: none;
+    }
+
+    &--error {
+      border-color: red;
+    }
   }
 
   &__group {
@@ -121,7 +132,7 @@
   }
 
   &__minimize {
-    top: .8rem;
+    top: .5rem;
     right: 6rem;
   }
 }

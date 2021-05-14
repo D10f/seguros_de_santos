@@ -16,17 +16,17 @@
   background-size: cover;
   background-image:
     linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
-    url(../assets/business-man-1200.webp);
+    url(../assets/images/business-man-1200.webp);
 
   @include mixins.responsive(tablet) {
     background-image:
       linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
-      url(../assets/business-man-800.webp);
+      url(../assets/images/business-man-800.webp);
   }
   @include mixins.responsive(phone) {
     background-image:
       linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
-      url(../assets/business-man-400.webp);
+      url(../assets/images/business-man-400.webp);
   }
 
   & > * {

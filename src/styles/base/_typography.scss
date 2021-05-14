@@ -1,6 +1,17 @@
 @use '../abstract/mixins';
 @use '../abstract/variables';
 
+@font-face {
+  font-family: 'Comfortaa';
+  src: url(../assets/fonts/Comfortaa-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+h3 {
+  font-family: Comfortaa;
+}
+
 .paragraph {
   margin-bottom: 2rem;
   line-height: 3rem;
@@ -24,6 +35,7 @@
 .section__title {
   margin: 5rem 0;
   font-size: 3rem;
+  font-family: Comfortaa;
   color: variables.$color-dark;
   display: inline-block;
   border-bottom: 2px solid variables.$color-primary;
