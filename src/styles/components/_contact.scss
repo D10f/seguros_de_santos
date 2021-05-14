@@ -89,21 +89,26 @@
   }
 
   &__input {
+    position: relative;
     font-family: inherit;
     padding: 1rem;
     margin: 0.5rem 0;
     color: variables.$color-dark;
     border: 1px solid variables.$color-gray-dark;
     border-radius: variables.$border-radius;
+    transition: transform 0.2s ease;
+    backface-visibility: hidden;
 
     &:focus {
       border-color: variables.$color-dark;
       box-shadow: none;
       outline: none;
+      transform: scale(1.03);
     }
 
     &--error {
-      border-color: red;
+      border-color: rgb(240, 50, 50);
+      border-left-width: 5px;
     }
   }
 

@@ -1,3 +1,7 @@
+import isEmail from 'validator/es/lib/isEmail';
+import isEmpty from 'validator/es/lib/isEmpty';
+import blacklist from 'validator/es/lib/blacklist';
+
 class FormHandler {
   constructor() {
     this.form = document.querySelector('.contact');
@@ -18,6 +22,20 @@ class FormHandler {
     this.submitBtn.disabled = !this.consentBox.checked;
   }
 
+  openForm() {
+    this.form.classList.remove('contact--closed');
+    this.form.classList.remove('contact--hidden');
+  }
+
+  closeForm() {
+    this.form.classList.add('contact--closed');
+    this.form.classList.remove('contact--hidden');
+  }
+
+  hideForm() {
+    this.form.classList.add('contact--hidden');
+  }
+
   handleClick(e) {
     if (e.target.className === 'contact__close') {
       return this.closeForm();
@@ -33,18 +51,6 @@ class FormHandler {
     }
   }
 
-  openForm() {
-    this.form.classList.remove('contact--closed');
-    this.form.classList.remove('contact--hidden');
-  }
-  closeForm() {
-    this.form.classList.add('contact--closed');
-    this.form.classList.remove('contact--hidden');
-  }
-  hideForm() {
-    this.form.classList.add('contact--hidden');
-  }
-
   handleSubmit(e) {
     e.preventDefault();
 
@@ -56,20 +62,42 @@ class FormHandler {
     const message = this.form[4];
     const honeypot = this.form[7];
 
+    // Honeypot against spambots
     if (honeypot.checked) return;
 
+    // Input validation
     let errors = false;
-    [name, email, phone, subject, message].forEach(input => {
-      if (input.value === '') {
+
+    [name, email, phone, subject, message].forEach((field, idx) => {
+      const input = field.value.trim();
+
+      // Check if input is empty
+      if (isEmpty(input)) {
+        field.classList.add('contact__input--error');
         errors = true;
-        input.classList.add('contact__input--error');
-        setTimeout(() => {
-          input.classList.remove('contact__input--error');
-        }, 4000);
       }
+
+      // Check if email address is valid
+      if (idx === 1 && !isEmail(input)) {
+        field.classList.add('contact__input--error');
+        errors = true;
+      }
+
+      // Remove blacklisted characters
+      field.value = blacklist(input, '<>')
     });
 
-    if (errors) return;
+    // Remove error class after 4 seconds
+    if (errors) {
+      setTimeout(() => {
+        [name, email, phone, subject, message].forEach(field => {
+          field.classList.remove('contact__input--error');
+        });
+      }, 4000);
+      return;
+    }
+
+    // Send request
   }
 }
 
