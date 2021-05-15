@@ -81,7 +81,7 @@
     background-color: #e9e9e9;
     padding-top: 10rem;
     padding-bottom: 10rem;
-    transform: translateY(-22rem) skewY(-2deg);
+    transform: translateY(-22rem) skewY(-1deg);
     z-index: 50;
     background-image:
       linear-gradient(to right, rgba(variables.$color-gray-light, 0.9), transparent),
@@ -99,7 +99,7 @@
     }
 
     & > * {
-      transform: skewY(2deg);
+      transform: skewY(1deg);
     }
   }
 
@@ -108,6 +108,7 @@
     padding-top: 10rem;
     padding-bottom: 15rem;
     transform: translateY(-24rem) skewY(1deg);
+    min-height: 101vh;
     box-shadow: variables.$box-shadow;
     z-index: 40;
     background-image:

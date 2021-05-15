@@ -8,6 +8,11 @@
   font-style: normal;
 }
 
+a:focus {
+  border-bottom: 2px solid variables.$color-primary;
+  outline: none;
+}
+
 h3 {
   font-family: Comfortaa;
 }

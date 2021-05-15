@@ -74,11 +74,12 @@
   &__checkbox {
     display: none;
 
-    &:target ~ .contact__label::before,
-    &:focus ~ .contact__label::before,
-    &:active ~ .contact__label::before,
     &:checked ~ .contact__label::before {
       background-color: variables.$color-primary-light;
+    }
+
+    &:focus ~ .contact__label::before {
+      box-shadow: 0 0 3rem variables.$color-primary;
     }
   }
 
@@ -103,7 +104,7 @@
       border-color: variables.$color-dark;
       box-shadow: none;
       outline: none;
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
     &--error {
