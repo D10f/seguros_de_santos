@@ -4,10 +4,10 @@ import blacklist from 'validator/es/lib/blacklist';
 
 class FormHandler {
   constructor() {
-    this.form = document.querySelector('.contact');
-    this.consentBox = document.getElementById('consent');
-    this.submitBtn = this.form.querySelector('button');
+    this.form         = document.querySelector('.contact');
     this.formTogglers = document.querySelectorAll('.toggler');
+    this.consentBox   = this.form.querySelector('#consent');
+    this.submitBtn    = this.form.querySelector('button');
     this.events();
   }
 
@@ -30,6 +30,7 @@ class FormHandler {
   closeForm() {
     this.form.classList.add('contact--closed');
     this.form.classList.remove('contact--hidden');
+    this.form.reset();
   }
 
   hideForm() {
@@ -54,50 +55,61 @@ class FormHandler {
   handleSubmit(e) {
     e.preventDefault();
 
-    // newFormData not working for some reason... ?
-    const name = this.form[0];
-    const email = this.form[1];
-    const phone = this.form[2];
-    const subject = this.form[3];
-    const message = this.form[4];
-    const honeypot = this.form[7];
-
     // Honeypot against spambots
+    const honeypot = this.form[7];
     if (honeypot.checked) return;
 
-    // Input validation
-    let errors = false;
+    const formData = new FormData(this.form);
 
-    [name, email, phone, subject, message].forEach((field, idx) => {
-      const input = field.value.trim();
+    for (const [ key, value ] of formData) {
+      const input = value.trim();
 
-      // Check if input is empty
-      if (isEmpty(input)) {
-        field.classList.add('contact__input--error');
-        errors = true;
-      }
+      // If input is empty or is not a valid email address
+      if (isEmpty(input) || (key === 'email' && !isEmail(input))) {
+        const el = this.form.querySelector(`.contact__input[name=${key}]`);
 
-      // Check if email address is valid
-      if (idx === 1 && !isEmail(input)) {
-        field.classList.add('contact__input--error');
-        errors = true;
+        el.classList.add('contact__input--error');
+        setTimeout(() => {
+          el.classList.remove('contact__input--error');
+        }, 4000);
+
+        return;
       }
 
       // Remove blacklisted characters
-      field.value = blacklist(input, '<>')
-    });
-
-    // Remove error class after 4 seconds
-    if (errors) {
-      setTimeout(() => {
-        [name, email, phone, subject, message].forEach(field => {
-          field.classList.remove('contact__input--error');
-        });
-      }, 4000);
-      return;
+      value = blacklist(input, '<>');
     }
 
-    // Send request
+    this.submitBtn.disabled = true;
+    this.form.querySelector('.contact__overlay-confirm').classList.add('contact__overlay--visible');
+
+    setTimeout(() => {
+      this.submitBtn.disabled = false;
+      this.closeForm();
+    }, 4000);
+
+    setTimeout(() => {
+      this.form.querySelector('.contact__overlay-confirm').classList.remove('contact__overlay--visible');
+    }, 4500);
+
+    // fetch('https://seguroscdesantos.xyz/email/cc.php', {
+    //   method: 'POST',
+    //   body: formData
+    // })
+    // .then(res => res.text())
+    // .then(data => {
+    //   // check for status code = 202
+    //   // show confirmation overlay
+    //
+    //   setTimeout(() => {
+    //     // hide confirmation overlay
+    //     this.submitBtn.disabled = false;
+    //     this.form.closeForm();
+    //   }, 4000);
+    // })
+    // .catch(err => {
+    //   // show error overlay
+    // });
   }
 }
 

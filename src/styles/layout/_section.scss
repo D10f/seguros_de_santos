@@ -32,7 +32,7 @@
 
     background-image:
       linear-gradient(to top, rgba(variables.$color-white, 0.9), transparent),
-      url(../assets/images/workspace.webp);
+      url(../assets/images/workspace-1200.webp);
 
     @include mixins.responsive(tablet) {
       background-image:
@@ -58,7 +58,7 @@
     z-index: 60;
     background-image:
       linear-gradient(to top, rgba(variables.$color-light, 0.9), transparent),
-      url(../assets/images/mountain-man.webp);
+      url(../assets/images/mountain-man-1200.webp);
 
     @include mixins.responsive(tablet) {
       background-image:
@@ -85,7 +85,7 @@
     z-index: 50;
     background-image:
       linear-gradient(to right, rgba(variables.$color-gray-light, 0.9), transparent),
-      url(../assets/images/buildings.webp);
+      url(../assets/images/buildings-1200.webp);
 
     @include mixins.responsive(tablet) {
       background-image:
@@ -115,7 +115,7 @@
       linear-gradient(to bottom right,
         rgba(variables.$color-light, 0.7),
         rgba(variables.$color-gray-dark, 0.75)),
-      url(../assets/images/happy-customers.webp);
+      url(../assets/images/happy-customers-1200.webp);
 
     @include mixins.responsive(tablet) {
       background-image:

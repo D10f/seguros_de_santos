@@ -103,13 +103,12 @@
     &:focus {
       border-color: variables.$color-dark;
       box-shadow: none;
-      outline: none;
-      transform: scale(1.02);
+      outline: 1px solid variables.$color-dark;
     }
 
     &--error {
-      border-color: rgb(240, 50, 50);
-      border-left-width: 5px;
+      border: 1px solid transparent;
+      outline: 2px solid variables.$color-error;
     }
   }
 
@@ -140,5 +139,48 @@
   &__minimize {
     top: .5rem;
     right: 6rem;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+    background-color: variables.$color-light;
+    border-radius: variables.$border-radius;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    transform: scale(1.1);
+    opacity: 0;
+    pointer-events: none;
+
+    &--visible {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &__overlay-error {
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5rem;
+
+    ol {
+      margin-top: -2rem;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-10rem) scale(5);
+    opacity: 0.4;
+    z-index: -1;
   }
 }

@@ -14,10 +14,10 @@
     </a>
     <ul class="navbar__links">
       <li class="navbar__item">
-        <a class="navbar__link" href="#products">Seguros</a>
+        <a class="navbar__link" href="/#products">Seguros</a>
       </li>
       <li class="navbar__item">
-        <a class="navbar__link" href="#about">Quienes Somos</a>
+        <a class="navbar__link" href="/#about">Quienes Somos</a>
       </li>
       <li class="navbar__item">
         <a class="navbar__link toggler" href="#contact">Contacto</a>
@@ -127,20 +127,19 @@
     <div class="container">
       <h2 class="section__title">Nuestras Compañías</h2>
       <ul class="brands">
-        <li>Allianz</li>
-        <li>Axa</li>
-        <li>Liberty Seguros</li>
-        <li>Mondial Assistance</li>
-        <li>Arag</li>
-        <li>Linea Directa</li>
-        <li>La Fe</li>
-        <li>Helvetia</li>
-        <li>Generali</li>
-        <li>Fiatc Seguros</li>
-        <li>Xenasegur</li>
-        <li>Previsora General</li>
-        <li>Prevision Mallorquina</li>
-        <li>Mutua General De Seguros</li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/allianz.webp" alt="Allianz Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/axa.webp" alt="Axa Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/liberty.webp" alt="Liberty Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/mondial.webp" alt="Mondial Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/arag.webp" alt="Arag Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/linea_directa.webp" alt="Linea Directa Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/fe_seguros.webp" alt="La Fe Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/helvetia.webp" alt="Helvetia Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/generali.webp" alt="Generali Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/fiatc.webp" alt="Fiatc Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/previsora_general.webp" alt="Previsora General Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/mallorquina.webp" alt="Prevision Mallorquina Seguros"></li>
+        <li class="brands__brand"><img loading="lazy" src="../assets/images/mutua_general.webp" alt="Mutua General Seguros"></li>
       </ul>
     </div>
   </section>
@@ -174,7 +173,7 @@
     <div class="container container__grid-3">
       <div class="container__column">
         <h3 class="mb2">Corredor De Seguros</h3>
-        <img class="footer__logo" src="../assets/images/santos.webp" alt="Seguros C de Santos">
+        <img class="footer__logo" loading="lazy" src="../assets/images/santos.webp" alt="Seguros C de Santos">
         <p>&copy; 2021 Seguros C. de Santos.</p>
       </div>
 
@@ -190,16 +189,16 @@
       <div class="container__column">
         <h3 class="mb2">Miembro De</h3>
         <a href="https://www.aunnaasociacion.es/es">
-          <img class="footer__partner-logo" src="../assets/images/aunna-256.png" alt="Aunna">
+          <img class="footer__partner-logo" loading="lazy" src="../assets/images/aunna-256.png" alt="Aunna">
         </a>
         <a class="mt2" href="https://6c3ade4a-44ef-47c6-92b7-c7945120a7ed.filesusr.com/ugd/e98b9b_f1a900adf54349b3bf08f70a9dbd32dd.pdf">Informe Anual DAC Aunna</a>
       </div>
     </div>
 
     <ul class="footer__legal mt10">
-      <li><a href="#">Aviso Legal</a></li>
-      <li><a href="#">Politica de Privacidad</a></li>
-      <li><a href="#">Protección de Datos</a></li>
+      <li><a href="/aviso-legal">Aviso Legal</a></li>
+      <li><a href="/privacidad">Política de Privacidad</a></li>
+      <li><a href="/proteccion-datos">Protección de Datos</a></li>
     </ul>
   </footer>
 
@@ -209,17 +208,47 @@
     <input class="contact__input" type="email"  name="email"    placeholder="Correo Electronico">
     <input class="contact__input" type="tel"    name="phone"    placeholder="Teléfono">
     <input class="contact__input" type="text"   name="subject"  placeholder="Asunto">
-    <textarea class="contact__input" name="message" placeholder="Cómo Podemos Ayudar?" rows="5"></textarea>
+    <textarea class="contact__input" name="message" placeholder="¿Cómo Podemos Ayudar?" rows="5"></textarea>
     <div class="contact__group mt2">
-      <input class="contact__checkbox" type="checkbox" name="consent" id="consent">
+      <input class="contact__checkbox" type="checkbox" id="consent">
       <button class="cta font-regular" type="button" draggable="false" disabled>Enviar</button>
       <input class="contact__cookies" type="checkbox" name="cookies">
       <label class="contact__label" tabindex="0" for="consent">
-        <span>He leído y acepto la <a class="is-primary" href="#">política de privacidad</a>.</span>
+        <span>He leído y acepto la <a class="is-primary" href="/privacidad" target="_blank">política de privacidad</a>.</span>
       </label>
     </div>
     <span class="contact__minimize">_</span>
     <span class="contact__close">&times;</span>
+
+    <div class="contact__overlay contact__overlay-confirm">
+      <svg class="contact__icon contact__icon--confirm">
+        <g fill="url(#gradient)">
+          <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
+        </g>
+      </svg>
+      <p>Muchas gracias por su mensaje, nos pondremos en contacto lo antes posible.</p>
+    </div>
+
+    <div class="contact__overlay contact__overlay-error">
+      <svg class="contact__icon contact__icon--error">
+        <defs>
+          <linearGradient id="gradient-error">
+            <stop offset="0%" stop-color="coral"/>
+            <stop offset="50%" stop-color="coral"/>
+            <stop offset="100%" stop-color="orangered"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#gradient-error)">
+          <path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
+        </g>
+      </svg>
+      <p>Parece que hemos tenido un pequeño problema enviando su mensaje. Intente lo siguiente:</p>
+      <ol>
+        <li>Compruebe su conexión de internet.</li>
+        <li>Utilize los datos de contacto mostrados en la página.</li>
+        <li>Intente enviar su consulta un poco más tarde.</li>
+      </ol>
+    </div>
   </form>
 
 </body>

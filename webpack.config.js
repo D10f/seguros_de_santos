@@ -4,6 +4,20 @@ const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+//
+// class MoveFilesAfterCompile {
+//   apply(compiler){
+//     compiler.hooks.done.tap('Move files not compiled by Webpack into dist/ directory', function(){
+//       fs.mkdir('./dist/mail', { recursive: true }, (err) => {
+//         if (err) throw err;
+//
+//         fs.copyFile('./src/mail/send_mail.php', './dist/mail/c.php', (err) => {
+//           if (err) throw err;
+//         });
+//       });
+//     });
+//   }
+// }
 
 let mode = 'development';
 let target = 'web';
@@ -19,7 +33,10 @@ if (process.env.NODE_ENV === 'production') {
   mode = 'production';
   target = 'browserslist';
   devtool = false;
-  plugins.push(new CleanWebpackPlugin());
+  plugins.push(
+    new CleanWebpackPlugin(),
+    // new MoveFilesAfterCompile()
+  );
 }
 
 /* Do not use hashes while in development in order to benefit from HMR */

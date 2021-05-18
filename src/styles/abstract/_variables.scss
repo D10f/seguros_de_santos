@@ -4,6 +4,8 @@ $color-primary: #8bbe29;
 $color-primary-light: color.adjust($color-primary, $lightness: 10%);
 $color-primary-dark: color.adjust($color-primary, $blackness: 10%);
 
+$color-error: rgb(240, 50, 50);
+
 $gradient-primary: linear-gradient(
   to right bottom,
   $color-primary-light,
